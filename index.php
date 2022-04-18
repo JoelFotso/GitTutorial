@@ -1,6 +1,3 @@
-<?php
-include_once 'Connection.php'; //Database Connection Link
- ?>
 
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -10,17 +7,14 @@ include_once 'Connection.php'; //Database Connection Link
   </head>
   <body>
 
-<?php
-$sql = "SELECT * FROM users;"; //durchzuführendes Befehl/Query
-$result = mysqli_query($conn, $sql);  //Speichern des Ergebnisses des Befehls in result
-$resultCheck = mysqli_num_rows($result);
-
-if($resultCheck > 0) {
-  while($row = mysqli_fetch_assoc($result)){
-    echo $row['user_uid']. "<br>";*/
-  }
-}
- ?>
+<form action="signup.php" method="post">
+  <input type="text" name="first" placeholder="Firstname"><br><br>
+  <input type="text" name="last" placeholder="Lastname"><br><br>
+  <input type="text" name="email" placeholder="E-Mail"><br><br>
+  <input type="text" name="uid" placeholder="Username"><br><br>
+  <input type="text" name="pwd" placeholder="Passsword"><br><br>
+  <button type="submit" name="submit">Sign Up</button>
+</form>
 
   </body>
 </html>
